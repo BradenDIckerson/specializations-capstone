@@ -37,25 +37,28 @@ module.exports = {
             time time(255)
         );
         
-        CREATE TABLE graphs(
-            checked_off boolean,
-            not_checked_off boolean,
-            in_progress
-        );
 
         CREATE TABLE goals(
             id integer(255),
             description varchar(225),
             date date(225),
             time time(225),
-            time_limit timestamp(225)
-        )
+            time_limit timestamp(225),
+            checked_off boolean,
+            not_checked_off boolean,
+            in_progress boolean
+        );
         
         
         
-        
+        INSERT INTO goals()
+        // viewing goals
+        // adding goals 
+        //
         `
       )
+          // graph for in progress 
+
       .then(() => {
         console.log("DB seeded!");
         res.sendStatus(200);

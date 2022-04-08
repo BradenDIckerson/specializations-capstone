@@ -13,8 +13,17 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
   },
 });
 
-
-
 module.exports = {
-    
-}
+  getGoals: (req, res) => {
+    sequelize
+      .query(`SELECT * FROM goals`)
+      .then((dbres) => res.status(200).send(dbres[0]))
+      .catch((err) => console.log(err));
+  },
+
+
+
+
+
+  
+};
