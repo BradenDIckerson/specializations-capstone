@@ -49,12 +49,39 @@ module.exports = {
             in_progress boolean
         );
         
+        CREATE TABLE links(
+          id integer(225),
+          name varchar(225),
+          link varchar(225)
+        );
+
+        CREATE TABLE classes(
+          id integer(225),
+          name varchar(225),
+          teacher varchar(225),
+          room integer(20)
+        );
         
-        
-        INSERT INTO goals()
-        // viewing goals
-        // adding goals 
-        //
+        INSERT INTO links(name, link)
+        VALUES('Youtube', 'https://www.youtube.com/'),
+        ('Wikipedia', 'https://en.wikipedia.org/wiki/Main_Page'),
+        ('Google', 'https://www.google.com/'),
+        ('Discord', 'https://discord.com/channels/@me');
+       
+        INSERT INTO classes(name, teacher, room)
+        VALUES ('Math', 'Mr. Jonas', 200),
+        ('Language Arts', 'Ms. Anderson', 405),
+        ('Science', 'Bill Nye', 159),
+        ('Gettin Schooled', 'Stephen Hawking' 001),
+        ('Gym', 'Michael Jordan', 023),
+        ('Buisness', 'Elon Musk', 282),
+        ('Coding', 'Shigeru Miyamoto', 040),
+        ('Clubs', 'Moon Knight', 000),
+        ('Track', 'Road Runner', 100);
+
+
+
+
         `
       )
           // graph for in progress 
