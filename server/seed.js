@@ -23,43 +23,45 @@ module.exports = {
         drop table if exists schedule;
         drop table if exists graphs;
         drop table if exists goals;
+        drop table if exists links;
+        drop table if exists classes;
 
         CREATE TABLE holidays(
             id SERIAL PRIMARY KEY,
-            date date(255),
-            time time(255),
+            dates date,
+            times timestamp,
             title varchar(225)
         );
 
         CREATE TABLE schedule(
-            id integer(225),
+            id integer,
             description varchar(225),
-            time time(255)
+            times timestamp
         );
         
 
         CREATE TABLE goals(
-            id integer(255),
+            id integer,
             description varchar(225),
-            date date(225),
-            time time(225),
-            time_limit timestamp(225),
+            dates date,
+            times timestamp,
+            time_limit timestamp,
             checked_off boolean,
             not_checked_off boolean,
             in_progress boolean
         );
         
         CREATE TABLE links(
-          id integer(225),
+          id integer,
           name varchar(225),
           link varchar(225)
         );
 
         CREATE TABLE classes(
-          id integer(225),
+          id integer,
           name varchar(225),
           teacher varchar(225),
-          room integer(20)
+          room integer
         );
         
         INSERT INTO links(name, link)
@@ -72,7 +74,7 @@ module.exports = {
         VALUES ('Math', 'Mr. Jonas', 200),
         ('Language Arts', 'Ms. Anderson', 405),
         ('Science', 'Bill Nye', 159),
-        ('Gettin Schooled', 'Stephen Hawking' 001),
+        ('Gettin Schooled', 'Stephen Hawking', 001),
         ('Gym', 'Michael Jordan', 023),
         ('Buisness', 'Elon Musk', 282),
         ('Coding', 'Shigeru Miyamoto', 040),

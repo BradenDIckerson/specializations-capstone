@@ -1,7 +1,7 @@
-const { default: axios } = require("axios");
+// const { axios } = require("axios");
 
 const display = document.querySelector("#link-display");
-const getLinks = document.querySelector("link-select");
+const getLinks = document.querySelector("#link-select");
 
 function removeAllChildNodes(parent) {
   while (parent.firstChild) {
@@ -12,6 +12,7 @@ function removeAllChildNodes(parent) {
 window.addEventListener("DOMContentLoaded", () => {
   axios.get("http://localhost:4000/api/links").then((res) => {
     console.log(res.data);
+    console.log('DOM loaded')
     res.data.forEach((link) => {
       const option = document.createElement("option");
       option.setAttribute("name", link["link"]);
