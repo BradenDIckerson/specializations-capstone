@@ -1,4 +1,4 @@
-require("dotenv").config();
+
 
 const { CONNECTION_STRING } = process.env;
 
@@ -22,18 +22,21 @@ module.exports = {
   },
 
   getLinks: (req, res) => {
+    console.log(req)
     sequelize
-      .query(`SELECT * FROM links`)
+      .query(`SELECT * FROM links `)
       .then((dbres) => res.status(200).send(dbres[0]))
       .catch((err) => console.log(err));
   },
+  
 
-  getLinks: (req, res) => {
+  getClasses: (req, res) => {
+    console.log(req)
     sequelize
-      .query(`SELECT * FROM links`)
+      .query(`SELECT * FROM classes`)
       .then((dbres) => res.status(200).send(dbres[0]))
       .catch((err) => console.log(err));
   }
-
+  
 
 };

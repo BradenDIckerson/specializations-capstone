@@ -4,8 +4,8 @@ const path = require("path");
 const cors = require("cors");
 const { seed } = require("./seed");
 const { getGoals } = require("./controller");
-const { links } = require("./seed");
-const { classes } = require("./seed");
+const { getLinks } = require("./controller");
+const { getClasses } = require("./controller");
 
 
 
@@ -17,13 +17,13 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
-app.post("/api/seed", seed)
+app.post("/api/seed", seed);
 
-app.get("/api/goals", getGoals)
+app.get("/api/goals", getGoals);
 
-app.get("/api/links", links)
+app.get("/api/links", getLinks);
 
-app.get("/api/classes", classes);
+app.get("/api/classes", getClasses);
 
 const port = process.env.PORT || process.env.SERVER_PORT;
 app.listen(port, () => console.log(`Server is running on ${port}`));
