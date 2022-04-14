@@ -1,11 +1,13 @@
-import PersonList from './components/links';
-
+import Links from './components/links';
+import Classes from './components/classes'
 
 function App() {
   return (
     <div ClassName="App">
-      <PersonList/>
+      <Links/>
+      <Classes/>
     </div>
   )
 }
 
+export default App

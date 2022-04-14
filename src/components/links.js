@@ -1,41 +1,38 @@
-import React from 'react';
-import ReactDOM from 'react-dom'
-import axios from 'axios';
+import React from "react";
+import ReactDOM from "react-dom";
+import axios from "axios";
 
 export default class Links extends React.Component {
-  state = {
-    persons: []
+  constructor() {
+    super();
+
+    this.state = {
+      links: [],
+    };
   }
 
   componentDidMount() {
-    axios.get(`https://localhost:4000/api/links`)
-      .then(res => {
+    axios
+      .get(`http://localhost:4000/api/links`)
+      .then((res) => {
         const links = res.data;
-        this.setState({ links });
+        this.setState({ links: links });
       })
+      .catch((err) => console.log(err));
   }
-
-  // const App = () => {
-  //   return (
-  //     <div>
-  //       Hello
-  //     </div>
-  //   )
-  // }
-
-  // Rea/ctDOM.render(<App />, document.querySelector("#root"))
 
 
   render() {
     return (
-      <ul>
-        {
-          this.state.links
-            .map(links =>
-              <li key={links.id}>{links.name}</li>
-            )
-        }
-      </ul>
-    )
+     <label> 
+       Helpful Links
+       <select>
+        {this.state.links.map((link, index) => {          
+          return <option id="link-select">{link.name}, {link.link}</option>;
+          
+        })}
+      </select>
+      </label>
+    );
   }
 }
