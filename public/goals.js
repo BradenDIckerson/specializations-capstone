@@ -1,34 +1,34 @@
-// // const { axios } = require("axios");
 
-// const display = document.querySelector("#link-display");
-// const getLinks = document.querySelector("#link-select");
+// const message = document.querySelector("#message")
 
-// function removeAllChildNodes(parent) {
-//   while (parent.firstChild) {
-//     parent.removeChild(parent.firstChild);
-//   }
+// const addGoal = (event) => {
+//     event.preventDefault();
+//     const inputField = document.querySelector("#input")
+//     const goal = document.createElement('li');
+//     const goalTitle = document.createElement('span');
+//     goalTitle.textContent = inputField.value;
+//     goalTitle.addEventListener('click', crossOffGoal)
+
+//     goal.appendChild (goalTitle);
+//     const deleteBin = document.createElement('button');
+//     deleteBin.textContent = 'x';
+    
+//     deleteBin.addEventListener('click', deleteGoal);
+//     goal.appendChild(deleteBin);
+    
+//     document.querySelector('ul').appendChild(goal);
+//     inputField.value = "" ;
+// }; 
+
+// document.querySelector('form').addEventListener('submit', addGoal)
+
+// const deleteGoal = (event) => {
+//      event.target.parentNode.remove()
+//      message.textContent = "Goals don gone. It's been absolutely Yeeted out and good luck findin it again.";
 // }
 
-// window.addEventListener("DOMContentLoaded", () => {
-//   axios.get("http://localhost:4000/api/links").then((res) => {
-//     console.log(res.data);
-//     console.log('DOM loaded')
-//     res.data.forEach((link) => {
-//       const option = document.createElement("option");
-//       option.setAttribute("name", link["link"]);
-//       option.textContent = `${link.name}, ${link.link}`;
-//       getLinks.appendChild(option);
-//     });
-//   });
-// });
 
-// getLinks.addEventListener("change", (event) => {
-//   removeAllChildNodes(display);
-//   const paragraph = document.createElement("p");
-//   const state = event.target.value;
-//   axios.get(`http://localhost:4000/api/links/${state}`).then((res) => {
-//     const { link } = res.data[0];
-//     paragraph.textContent = link;
-//     display.appendChild(paragraph);
-//   });
-// });
+// const crossOffGoal = (event) => {
+//     event.target.classList.toggle('checked')
+
+// }

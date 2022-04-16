@@ -11,6 +11,7 @@ function App() {
       <TextArea/>
       <Goals/>
     </div>
+    
   )
 }
 

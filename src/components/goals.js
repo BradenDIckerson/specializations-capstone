@@ -6,7 +6,12 @@ import React from "react";
 export default class Goals extends React.Component {
     constructor() {
       super();
-  
+      
+
+
+
+
+
       this.state = {
         goal: [],
       };
