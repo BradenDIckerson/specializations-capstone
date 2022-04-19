@@ -1,0 +1,16 @@
+#calandar{
+    background-color: aquamarine;
+    border: 5px;
+    position: absolute;
+    right: 5px;
+}
+
+#gmap_canvas{
+    position: relative;
+    right: 5px;
+}
+
+#title{
+    text-align: center;
+    
+}

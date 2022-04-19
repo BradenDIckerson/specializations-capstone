@@ -1,5 +1,5 @@
 import React from "react";
-
+import './textarea.css'
 
 
 
@@ -15,12 +15,11 @@ export default class TextArea extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form className="notes" onSubmit={this.handleSubmit}>
             <label>
               Notes:
               <textarea value={this.state.value} onChange={this.handleChange} />
-            </label>
-            <input type="submit" value="Submit" />
+            </label>        
           </form>
 
         );

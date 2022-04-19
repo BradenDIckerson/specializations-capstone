@@ -10,6 +10,7 @@ function App() {
       <Classes/>
       <TextArea/>
       <Goals/>
+     
     </div>
     
   )

@@ -1,8 +1,10 @@
 import React from "react";
 // import './App.css'
 import ListGoals from "./listGoals";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
-
+library.add(faTrash);
 
 class Goal extends React.Component {
   constructor(props) {
@@ -13,10 +15,12 @@ class Goal extends React.Component {
       currentGoal: {
         text: "",
         key: "",
-      }
-   }
-      this.handleInput = this.handleInput.bind(this);
-      this.addGoal = this.addGoal.bind(this);
+      },
+    };
+    this.handleInput = this.handleInput.bind(this);
+    this.addGoal = this.addGoal.bind(this);
+    this.deleteGoal = this.deleteGoal.bind(this);
+    this.setUpdate = this.setUpdate.bind(this);
   }
 
   handleInput(e) {
@@ -32,33 +36,56 @@ class Goal extends React.Component {
     e.preventDefault();
     const newGoal = this.state.currentGoal;
     console.log(newGoal);
-    if(newGoal.text!==""){
-      const newGoals=[...this.state.goals, newGoal];
+    if (newGoal.text !== "") {
+      const newGoals = [...this.state.goals, newGoal];
       this.setState({
-        goals:newGoals,
-        currentGoal:{
-          text:'',
-          key:''
-        }
-      })
+        goals: newGoals,
+        currentGoal: {
+          text: "",
+          key: "",
+        },
+      });
     }
+  }
+
+  deleteGoal(key){
+    const filteredGoals = this.state.goals.filter(goal => goal.key!==key);
+    this.setState({
+      goals:filteredGoals
+    })
+  }
+
+  setUpdate(text, key){
+    const goals = this.state.goals;
+    goals.map(goal =>{
+      if(goal.key===key){
+        goal.text=text;
+      }
+    })
+    this.setState({
+      goals: goals
+    })
   }
 
   render() {
     return (
       <div className="App">
-      <header>
-        <form id="goals" onSubmit={this.addGoal}>
-          <input
-            type="text"
-            placeholder="Enter Goal"
-            value={this.state.currentGoal.text}
-            onChange={this.handleInput}
-          />
-          <button type="submit">Add Goal</button>
-        </form>
-      </header>
-      <ListGoals goals = {this.state.goals}></ListGoals>
+        <header>
+          <form id="goals" onSubmit={this.addGoal}>
+            <input
+              type="text"
+              placeholder="Enter Goal"
+              value={this.state.currentGoal.text}
+              onChange={this.handleInput}
+            />
+            <button type="submit">Add Goal</button>
+          </form>
+        </header>
+        <ListGoals goals={this.state.goals}
+        deleteGoal ={this.deleteGoal}
+        setUpdate ={this.setUpdate}
+        ></ListGoals>
+
       </div>
     );
   }

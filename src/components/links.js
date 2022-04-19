@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import './links.css';
 
 export default class Links extends React.Component {
   constructor() {
@@ -8,7 +9,7 @@ export default class Links extends React.Component {
     this.state = {
       links: [],
     };
-  }
+  } 
 
   componentDidMount() {
     axios
@@ -23,7 +24,7 @@ export default class Links extends React.Component {
 
   render() {
     return (
-     <label> 
+     <label className="links"> 
        Helpful Links
        <select>
         {this.state.links.map((link, index) => {          

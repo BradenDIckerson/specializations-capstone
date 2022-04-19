@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-
+import './classes.css'
 export default class Classes extends React.Component {
     constructor() {
       super();
@@ -22,7 +22,7 @@ export default class Classes extends React.Component {
 
       render() {
         return (
-          <label>
+          <label className="classes">
               Subject, Teacher, Room#
               <select>
             {this.state.classes.map((classes, index) => {
