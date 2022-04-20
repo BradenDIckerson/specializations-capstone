@@ -1,3 +1,15 @@
 .notes{
-    background-color: aquamarine;
+    background-color: #ffdd6f;
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+}
+.notes textarea{
+    height:370%;
+    width:99%;
+    
+}
+
+.note{
+text-align: center;
 }

@@ -1,12 +1,13 @@
 .links{
-    background-color: rgb(0, 247, 255);
-    position: absolute;
-    right: 30px;
+    background-color: #ffd23d;
+    /* position: absolute;
+    right: 30px; */
     color: rgb(0, 0, 0);
 }
 
 .links select{
-    background-color: aqua;
+    background-color: #ffdd6f;
     position:relative;
     right: 0px
-}
+    
+} 

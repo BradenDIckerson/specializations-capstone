@@ -3,6 +3,8 @@ import React from "react";
 import ListGoals from "./listGoals";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import './goals.css'
+
 
 library.add(faTrash);
 
@@ -69,7 +71,7 @@ class Goal extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="goals-container">
         <header>
           <form id="goals" onSubmit={this.addGoal}>
             <input

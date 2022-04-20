@@ -1,6 +1,6 @@
 import React from "react";
 import './textarea.css'
-
+ 
 
 
 export default class TextArea extends React.Component {
@@ -16,8 +16,9 @@ export default class TextArea extends React.Component {
     render() {
         return (
             <form className="notes" onSubmit={this.handleSubmit}>
+          
             <label>
-              Notes:
+              <h1 className="note">Notes:</h1>
               <textarea value={this.state.value} onChange={this.handleChange} />
             </label>        
           </form>
