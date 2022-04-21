@@ -79,7 +79,8 @@ module.exports = {
         ('Buisness', 'Elon Musk', 282),
         ('Coding', 'Shigeru Miyamoto', 040),
         ('Clubs', 'Moon Knight', 000),
-        ('Track', 'Road Runner', 100);
+        ('Track', 'Road Runner', 100),
+        ('Hand to hand combat', 'Will Smith', 357);
 
 
 
